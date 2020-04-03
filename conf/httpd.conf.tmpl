@@ -1,0 +1,34 @@
+ServerAdmin $HTTPD_SERVER_ADMIN
+ServerName $HTTPD_SERVER_NAME
+ServerRoot "$HTTPD_PREFIX"
+ServerSignature $HTTPD_SERVER_SIGNATURE
+ServerTokens $HTTPD_SERVER_TOKENS
+
+Listen 8080
+
+HostnameLookups $HTTPD_HOSTNAME_LOOKUPS
+UseCanonicalName $HTTPD_USE_CANONICAL_NAME
+TraceEnable $HTTPD_TRACE_ENABLE
+
+Timeout $HTTPD_TIMEOUT
+MaxRequestWorkers $HTTPD_REQUEST_WORKERS
+KeepAlive $HTTPD_KEEPALIVE
+MaxKeepAliveRequests $HTTPD_KEEPALIVE_REQUESTS
+KeepAliveTimeout $HTTPD_KEEPALIVE_TIMEOUT
+RequestReadTimeout $HTTPD_TIMEOUT_REQUEST
+
+LoadModule alias_module modules/mod_alias.so
+LoadModule env_module modules/mod_env.so
+LoadModule dir_module modules/mod_dir.so
+LoadModule expires_module modules/mod_expires.so
+LoadModule http2_module modules/mod_http2.so
+LoadModule include_module modules/mod_include.so
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
+LoadModule proxy_http_module modules/mod_proxy_http.so
+LoadModule proxy_http2_module modules/mod_proxy_http2.so
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule setenvif_module modules/mod_setenvif.so
+LoadModule unixd_module modules/mod_unixd.so
+
+Include conf/extra/*.conf

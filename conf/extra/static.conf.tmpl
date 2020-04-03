@@ -1,0 +1,13 @@
+<FilesMatch "\.(?:htm?l|json)$">
+    ExpiresActive $HTTPD_DOCUMENT_EXPIRES_ACTIVE
+    ExpiresDefault $HTTPD_DOCUMENT_EXPIRES_DEFAULT
+    Header set Cache-Control $HTTPD_DOCUMENT_CACHE_CONTROL
+    Header set Pragma $HTTPD_DOCUMENT_PRAGMA
+</FilesMatch>
+
+<FilesMatch "\.(?:css|cur|js|jpe?g|gif|htc|ico|png|xml|otf|ttf|eot|woff|woff2|svg|mp4|svgz|ogg|ogv|pdf|pptx?|zip|tgz|gz|rar|bz2|doc|xls|exe|tar|mid|midi|wav|bmp|rtf|txt|map)$">
+    ExpiresActive $HTTPD_STATIC_EXPIRES_ACTIVE
+    ExpiresDefault $HTTPD_STATIC_EXPIRES_DEFAULT
+    Header set Cache-Control $HTTPD_STATIC_CACHE_CONTROL
+    Header set Pragma $HTTPD_STATIC_PRAGMA
+</FilesMatch>

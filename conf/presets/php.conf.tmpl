@@ -1,0 +1,9 @@
+<Proxy "fcgi://$HTTPD_BACKEND_HOST:$HTTPD_BACKEND_PORT/">
+    ProxySet connectiontimeout=$HTTPD_FCGI_PROXY_CONNECT_TIMEOUT timeout=$HTTPD_FCGI_PROXY_TIMEOUT
+</Proxy>
+
+<FilesMatch "\.php$">
+    <If "-f %{REQUEST_FILENAME}">
+        SetHandler "proxy:fcgi://$HTTPD_BACKEND_HOST:$HTTPD_BACKEND_PORT"
+    </If>
+</FilesMatch>

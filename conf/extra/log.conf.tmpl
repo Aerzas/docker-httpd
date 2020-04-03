@@ -1,0 +1,7 @@
+LoadModule log_config_module modules/mod_log_config.so
+
+LogLevel $HTTPD_LOG_LEVEL
+ErrorLog $HTTPD_LOG_ERROR
+CustomLog $HTTPD_LOG_CUSTOM
+
+LogFormat "$HTTPD_LOG_FORMAT" common

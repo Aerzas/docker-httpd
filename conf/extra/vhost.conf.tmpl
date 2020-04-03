@@ -1,0 +1,27 @@
+<VirtualHost *:8080>
+    DocumentRoot "$HTTPD_VHOST_ROOT"
+    DirectoryIndex $HTTPD_VHOST_INDEX_FILE
+
+    Include conf/presets/$HTTPD_VHOST_PRESET.conf
+
+    <Directory "$HTTPD_VHOST_ROOT">
+        Options $HTTPD_VHOST_OPTIONS
+        AllowOverride $HTTPD_VHOST_ALLOW_OVERRIDE
+        Require all granted
+    </Directory>
+
+    <DirectoryMatch "^\.|\/\.">
+        Order allow,deny
+        Deny from all
+    </DirectoryMatch>
+
+    <FilesMatch "^\.">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    $HTTPD_VHOST_PROTOCOLS
+
+    SetEnvIf Request_URI "^/\.healthz$" nolog
+    RedirectMatch 204 .healthz
+</VirtualHost>

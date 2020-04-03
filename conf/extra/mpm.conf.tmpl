@@ -1,0 +1,7 @@
+LoadModule mpm_event_module modules/mod_mpm_event.so
+
+MaxClients $HTTPD_MPM_MAX_CLIENTS
+ThreadLimit $HTTPD_MPM_THREAD_LIMIT
+ThreadsPerChild $HTTPD_MPM_THREADS_PER_CHILD
+ServerLimit $HTTPD_MPM_SERVER_LIMIT
+StartServers $HTTPD_MPM_START_SERVERS
