@@ -8,7 +8,7 @@ if [ -z "${build_version}" ]; then
   exit 1;
 fi;
 
-registry_image='aerzas/httpd';
+registry_image='faering/httpd';
 declare -A httpd_versions=(
   [2.4]=httpd:2.4.43-alpine
 );

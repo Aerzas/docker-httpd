@@ -1,13 +1,12 @@
 # HTTPD
 
 HTTPD docker container image that requires no specific user or root permission to function.
-It's compatible with OpenShift and Kubernetes.
 
 Image comes with presets:
 - `default`: serve static files
 - `php`: proxy requests to a PHP-FPM backend
 
-Docker Hub image: [https://hub.docker.com/r/aerzas/httpd](https://hub.docker.com/r/aerzas/httpd)
+Docker Hub image: [https://hub.docker.com/r/faering/httpd](https://hub.docker.com/r/faering/httpd)
 
 ## Docker compose example
 
@@ -15,7 +14,7 @@ Docker Hub image: [https://hub.docker.com/r/aerzas/httpd](https://hub.docker.com
 version: '3.5'
 services:
     php:
-        image: aerzas/httpd:2.4-1.0.0
+        image: faering/httpd:2.4-1.0.0
         environment:
               HTTPD_VHOST_ALLOW_OVERRIDE: All
               HTTPD_VHOST_PRESET: php
