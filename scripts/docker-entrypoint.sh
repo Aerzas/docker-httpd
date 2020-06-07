@@ -18,9 +18,12 @@ else
 fi
 
 # Replace environment variables in template files
-envs=$(printf '${%s} ' "$(sh -c \"env | cut -d'=' -f1\")")
-find /usr/local/apache2/conf -name '*.tmpl' \
-  -exec sh -c 'filename="$1"; envsubst "${envs}" <"${filename}" >"${filename%?????}"' \
-  -exec rm {} \;
+envs=$(printf '${%s} ' $(sh -c "env | cut -d'=' -f1"))
+find /usr/local/apache2/conf -type f -name '*.tmpl' > /tmp/tmpl
+while IFS= read -r filename; do
+  envsubst "${envs}" <"${filename}" >"${filename%.tmpl}"
+  rm "${filename}"
+done < /tmp/tmpl
+rm /tmp/tmpl
 
 exec "$@"
