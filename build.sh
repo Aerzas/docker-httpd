@@ -56,7 +56,7 @@ build_httpd() {
 }
 
 # Build single HTTPD version
-if [ ! -z "${build_httpd_version}" ]; then
+if [ -n "${build_httpd_version}" ]; then
   build_httpd "${build_httpd_version}"
 # Build all HTTPD versions
 else
