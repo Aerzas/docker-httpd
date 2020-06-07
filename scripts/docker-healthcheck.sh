@@ -1,6 +1,6 @@
 #!/bin/sh
-set -e;
+set -e
 
-wget --spider --quiet --tries=1 http://${HTTPD_SERVER_NAME}:8080/.healthz && exit 0;
+wget --spider --quiet --tries=1 "http://${HTTPD_SERVER_NAME}:8080/.healthz" && exit 0
 
-exit 1;
+exit 1

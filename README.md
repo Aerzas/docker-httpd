@@ -14,7 +14,7 @@ Docker Hub image: [https://hub.docker.com/r/faering/httpd](https://hub.docker.co
 version: '3.5'
 services:
     php:
-        image: faering/httpd:2.4-1.0.0
+        image: faering/httpd:2.4-1.0.1
         environment:
               HTTPD_VHOST_ALLOW_OVERRIDE: All
               HTTPD_VHOST_PRESET: php
