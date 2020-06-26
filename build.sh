@@ -8,7 +8,7 @@ if [ -z "${build_version}" ]; then
   exit 1
 fi
 
-registry_image='faering/httpd'
+registry_image='aerzas/httpd'
 
 httpd_base_tag() {
   httpd_version="${1}"
