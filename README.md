@@ -16,9 +16,9 @@ services:
     php:
         image: aerzas/httpd:2.4-1.0.1
         environment:
-              HTTPD_VHOST_ALLOW_OVERRIDE: All
-              HTTPD_VHOST_PRESET: php
-              HTTPD_VHOST_ROOT: /var/www/html/web
+            HTTPD_VHOST_ALLOW_OVERRIDE: All
+            HTTPD_VHOST_PRESET: php
+            HTTPD_VHOST_ROOT: /var/www/html/web
         ports:
             - '80:8080'
         healthcheck:
