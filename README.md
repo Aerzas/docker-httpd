@@ -14,7 +14,7 @@ Docker Hub image: [https://hub.docker.com/r/aerzas/httpd](https://hub.docker.com
 version: '3.5'
 services:
     php:
-        image: aerzas/httpd:2.4-1.1.0
+        image: aerzas/httpd:2.4-1.1.1
         environment:
             HTTPD_VHOST_ALLOW_OVERRIDE: All
             HTTPD_VHOST_PRESET: php
