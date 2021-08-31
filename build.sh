@@ -19,7 +19,7 @@ httpd_base_tag() {
 
   case ${httpd_version} in
   2.4)
-    echo httpd:2.4.46-alpine
+    echo httpd:2.4.48-alpine
     ;;
   *)
     return 0
