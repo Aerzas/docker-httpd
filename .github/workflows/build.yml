@@ -11,8 +11,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - httpd-version: 2.4
-            httpd-image: httpd:2.4.52-alpine
+          -
+            httpd-version: 2.4
+            httpd-image: httpd:2.4.54-alpine
     steps:
       -
         name: Checkout
