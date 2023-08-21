@@ -13,7 +13,7 @@ jobs:
         include:
           -
             httpd-version: 2.4
-            httpd-image: httpd:2.4.55-alpine3.17
+            httpd-image: httpd:2.4.57-alpine3.18
     steps:
       -
         name: Checkout
